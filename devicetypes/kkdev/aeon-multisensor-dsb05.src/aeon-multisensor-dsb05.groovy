@@ -103,9 +103,11 @@ metadata {
 		valueTile("battery", "device.battery", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
 			state "battery", label:'${currentValue}% battery', unit:""
 		}
-
+		standardTile("configure", "device.configure", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
+			state "configure", label:'resend config', action:"configuration.configure", icon:"st.samsung.da.oven_ic_send"
+		}
 		main(["motion"])
-		details(["motion", "temperature", "humidity", "illuminance", "battery"])
+		details(["motion", "temperature", "humidity", "illuminance", "battery","configure"])
 	}
 }
 
